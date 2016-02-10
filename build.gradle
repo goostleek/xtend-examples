@@ -1,0 +1,64 @@
+buildscript {
+	repositories {
+		maven() {
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies {
+		classpath "org.xtend:xtend-gradle-plugin:0.4.14"
+	}
+}
+
+def xtendVersion = "2.9.1"
+
+allprojects {
+	apply plugin: 'org.xtend.xtend'
+	apply plugin: 'eclipse'
+	apply plugin: 'idea'
+	repositories.jcenter()
+	dependencies {
+		compile "org.eclipse.xtend:org.eclipse.xtend.lib:${xtendVersion}"
+		testCompile 'junit:junit:4.12'
+	}
+}
+
+dependencies {
+	compile project(':xtend-active-annotations')
+	compile	'javax.inject:javax.inject:1'
+	compile 'javax.persistence:persistence-api:1.0.2'
+}
+
+project(':xtend-active-annotations') {
+	dependencies {
+		compile 'org.apache.commons:commons-lang3:3.4'
+		testCompile "org.eclipse.xtend:org.eclipse.xtend.core:${xtendVersion}"
+		testCompile 'org.ow2.asm:asm:5.0.4'
+	}
+}
+
+// xtend {
+// 	generator {
+// 		// whether to generate @SuppressWarnings("all"), enabled by default
+// 		suppressWarningsAnnotation = false
+// 		// whether to generate the @Generated annotation, disabled by default
+// 		generatedAnnotation {
+// 			enabled = true
+// 			comment = "JCommerce Xtend Demo"
+// 			includeDate = true
+// 		}
+// 	}
+// 	debugger {
+// 		// how to install debug info into generated Java code
+// 		// SMAP adds Xtend debug info on top of Java
+// 		// PRIMARY makes Xtend the only debug info (throws away Java line numbers)
+// 		// default is SMAP for Java projects and PRIMARY for Android
+// 		sourceInstaller = 'SMAP' //or 'PRIMARY' or 'NONE'
+// 		//whether to hide synthetic variables in the debugger
+// 		hideSyntheticVariables = true
+// 	}
+// 	validator {
+// 		// adjust severity of issues
+// 		// available levels are error, warning, info and ignore
+// 		error 'org.eclipse.xtend.core.validation.IssueCodes.unused_private_member'
+// 	}
+// }
