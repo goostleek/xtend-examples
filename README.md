@@ -1,6 +1,8 @@
 # Xtend examples
 
-> *Xtend is a flexible and expressive dialect of Java, which compiles into readable Java 5 compatible source code. You can use any existing Java library seamlessly. The compiled output is readable and pretty-printed, and tends to run as fast as the equivalent handwritten Java code.*
+The project presents only a small subset of Xtend language features.
+
+> *Xtend is a flexible and expressive dialect of Java, which compiles into readable Java compatible source code. You can use any existing Java library seamlessly. The compiled output is readable and pretty-printed, and tends to run as fast as the equivalent handwritten Java code.*
 >
 *Get productive and write beautiful code with powerful macros, lambdas, operator overloading and many more modern language features.*
 > 
