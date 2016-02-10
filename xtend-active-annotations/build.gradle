@@ -1,0 +1,4 @@
+dependencies {
+	testCompile "org.eclipse.xtend:org.eclipse.xtend.core:${xtendVersion}"
+	testCompile 'org.ow2.asm:asm:5.0.4'
+}
